@@ -287,7 +287,9 @@ export const processStreamResults = (results: StreamResult[]): void => {
 const readChannelId = (request: http.IncomingMessage): string => {
   const cookies = cookie.parse(request.headers.cookie || '');
   const token = cookies[opts.jwtCookieName];
-
+  logger.error("opts.jwtCookieName", opts.jwtCookieName)
+  logger.error("cookies", cookies)
+  logger.error("request.headers.", request.headers)
   if (!token) throw new Error('JWT not present');
   const jwtPayload = jwt.verify(token, opts.jwtSecret, {
     algorithms: opts.jwtAlgorithms as Algorithm[],

@@ -17,6 +17,6 @@
   },
   "redisStreamPrefix": "async-events-",
   "jwtAlgorithms": ["HS256"],
-  "jwtSecret": "CHANGE-ME-IN-PRODUCTION-GOTTA-BE-LONG-AND-SECRET",
+  "jwtSecret": "ca5d056573a066f1050e4e684c0850f724bc116072629d3b9690ebc9c1ab22f9",
   "jwtCookieName": "async-token"
 }

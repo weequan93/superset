@@ -25,6 +25,7 @@ router.get('/', function (req, res) {
   let numTokens = req.query.sockets ? Number(req.query.sockets) : 100;
   let tokens = [];
   for (let i = 0; i < numTokens; i++) {
+    console.log("config.jwtSecret", config.jwtSecret)
     const token = jwt.sign({ channel: String(i) }, config.jwtSecret);
     tokens.push(token);
   }

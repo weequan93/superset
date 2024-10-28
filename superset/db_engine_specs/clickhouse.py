@@ -56,6 +56,7 @@ class ClickHouseBaseEngineSpec(BaseEngineSpec):
 
     _time_grain_expressions = {
         None: "{col}",
+        "PT1S": "({col})",
         "PT1M": "toStartOfMinute(toDateTime({col}))",
         "PT5M": "toDateTime(intDiv(toUInt32(toDateTime({col})), 300)*300)",
         "PT10M": "toDateTime(intDiv(toUInt32(toDateTime({col})), 600)*600)",

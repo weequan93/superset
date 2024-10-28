@@ -859,7 +859,7 @@ TIME_GRAIN_DENYLIST: list[str] = []
 # superset/db_engine_specs/base.py.
 # For example: To add a new 2 second time grain:
 # TIME_GRAIN_ADDONS = {'PT2S': '2 second'}
-TIME_GRAIN_ADDONS: dict[str, str] = {}
+TIME_GRAIN_ADDONS: dict[str, str] = {'PT2S': '2 second',}
 
 # Implementation of additional time grains per engine.
 # The column to be truncated is denoted `{col}` in the expression.
@@ -869,7 +869,11 @@ TIME_GRAIN_ADDONS: dict[str, str] = {}
 #         'PT2S': 'toDateTime(intDiv(toUInt32(toDateTime({col})), 2)*2)'
 #     }
 # }
-TIME_GRAIN_ADDON_EXPRESSIONS: dict[str, dict[str, str]] = {}
+TIME_GRAIN_ADDON_EXPRESSIONS: dict[str, dict[str, str]] = {
+    'clickhouse': {
+        'PT2S': '''FROM_UNIXTIME(UNIX_TIMESTAMP({col})-MOD(UNIX_TIMESTAMP({col}), 2))''',
+    }
+}
 
 # Map of custom time grains and artificial join column producers used
 # when generating the join key between results and time shifts.
