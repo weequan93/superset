@@ -162,6 +162,7 @@ export const advancedAnalyticsControls: ControlPanelSectionConfig = {
           label: t('Rule'),
           default: null,
           choices: [
+            ['1S', t('1 secondly frequency')],
             ['1T', t('1 minutely frequency')],
             ['1H', t('1 hourly frequency')],
             ['1D', t('1 calendar day frequency')],

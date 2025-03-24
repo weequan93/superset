@@ -358,6 +358,7 @@ const config: ControlPanelConfig = {
               label: t('Rule'),
               default: null,
               choices: [
+                ['1S', t('1S')],
                 ['1T', t('1T')],
                 ['1H', t('1H')],
                 ['1D', t('1D')],
