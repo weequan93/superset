@@ -448,3 +448,5 @@ xlsxwriter==3.0.9
     #   pandas
 zstandard==0.23.0
     # via flask-compress
+clickhouse-connect>=0.6.8
+pydoris==1.0.6

@@ -221,3 +221,8 @@ Understanding the Superset Points of View
 
 <!-- telemetry/analytics pixel: -->
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=bc1c90cd-bc04-4e11-8c7b-289fb2839492" />
+
+
+## Local
+
+$ docker compose -f docker-compose-non-dev.yml up -d --build --force-recreate
